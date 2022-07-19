@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --mainClr: rgb(42, 44, 81);
+    --roulHeight: 150px;
+    /* border: 1px solid #000; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    
+    align-items: center;
+    background-color: var(--mainClr);
+}
+
+.container {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+    transition: 1s;
+
+
+}
+
+.roll__block {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    width: 800px;
+    /* height: 500px; */
+    overflow: hidden;
+    transition: 1s;
+
+}
+
+.roll__block::before {
+    content: '';
+    position: absolute;
+    /* margin-left: 399px; */
+    width: 2px;
+    height: var(--roulHeight);
+    transform: translateY(20px);
+    background-color: rgb(255, 153, 0);
+    z-index: 3;
+}
+
+.roll_button {
+    width: 150px;
+    height: 30px;
+    background-color: #3ace51;
+    color: #fff;
+    border: 2px solid #37ae48;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.roll_button:active {
+    background-color: #37ae49;
+}
+
+.roulette {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 20px 0;
+    width: 800px;
+    height: var(--roulHeight);
+
+}
+
+
+
+.roulette div {
+    position: absolute;
+}
+
+.take_sell__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+}
+
+.curr_drop {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.take_sell__buttons button {
+    width: 150px;
+    height: 30px;
+    background-color: #3ace51;
+    color: #fff;
+    border: 2px solid #37ae48;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.take_sell__buttons button:active {
+    background-color: #37ae49;
+}
+
+.roll {
+    width: 150px;
+    height: 50px;
+}
+
+.rollElement {
+    /* margin: 10px; */
+    height: calc(var(--roulHeight) - 20px);
+    width: calc(var(--roulHeight) - 20px);
+    border-radius: 10px;
+}
+
+.drop_history {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    height: 50px;
+    /* width: 50px; */
+}
+
+.drop_history_element {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.balance {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    margin: 10px;
+    color: #ffffff;
+    font-family: sans-serif;
+}
+
+@keyframes rollAnim {
+    0% {
+        transform: translateX(0);
+    }
+    100%{ 
+        transform : translateX(-3700px);
+    }
+}
